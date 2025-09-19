@@ -1,0 +1,24 @@
+<div class="reserva-container">
+  <h1>Realizar una Reserva</h1>
+  <%= form_with model: @reservation, url: reservations_path, local: true do |form| %>
+    <div>
+      <%= form.label :name, "Nombre del Cliente" %>
+      <%= form.text_field :name, required: true %>
+    </div>
+    <div>
+      <%= form.label :people_count, "Cantidad de Personas" %>
+      <%= form.number_field :people_count, min: 1, required: true %>
+    </div>
+    <div>
+      <%= form.label :reservation_time, "Fecha y Hora de la Reserva" %>
+      <%= form.datetime_select :reservation_time, required: true %>
+    </div>
+    <div>
+      <%= form.submit "Reservar Mesa" %>
+    </div>
+  <% end %>
+
+  <% if flash[:alert] %>
+    <p style="color: red;"><%= flash[:alert] %></p>
+  <% end %>
+</div>

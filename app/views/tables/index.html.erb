@@ -1,0 +1,35 @@
+<div class="reserva-container">
+  <h1>Estado de Mesas</h1>
+  <%= turbo_frame_tag "tables" do %>
+    <table class="mesas-table">
+      <thead>
+        <tr>
+          <th>Nombre de Mesa</th>
+          <th>Capacidad</th>
+          <th>Disponibilidad</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @tables.each do |table| %>
+          <tr id="<%= dom_id(table) %>">
+            <td><%= table.name %></td>
+            <td><%= table.capacity %> personas</td>
+            <td>
+              <% if table.available %>
+                <span class="disponible">Disponible</span>
+              <% else %>
+                <span class="ocupada">Ocupada</span>
+              <% end %>
+            </td>
+            <td>
+              <% unless table.available %>
+                <%= button_to "Liberar Mesa", release_table_path(table), method: :patch, data: { turbo_frame: "tables" }, class: "liberar-button" %>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>

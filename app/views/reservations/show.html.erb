@@ -1,0 +1,15 @@
+<div class="reserva-container" style="background-color: #3f2e2e; padding: 30px; border-radius: 15px; color: white; width: 400px; margin: 0 auto;">
+  <h1 style="text-align: center; color: white;">¡Reserva Confirmada!</h1>
+  <p><strong>Cliente:</strong> <%= @reservation.name %></p>
+  <p><strong>Cantidad de Personas:</strong> <%= @reservation.people_count %></p>
+  <p><strong>Mesa asignada:</strong> <%= @reservation.table.name %></p>
+  <p><strong>Fecha y Hora:</strong> <%= @reservation.reservation_time.strftime("%d/%m/%Y %H:%M") %></p>
+
+  <div style="margin-top: 20px; display: flex; justify-content: space-between;">
+    <%= link_to "Realizar otra reserva", new_reservation_path, class: "button", style: "background-color: #d36b60; padding: 10px 15px; color: white; border-radius: 8px; text-decoration: none;" %>
+
+    <%= button_to "Cancelar Reserva", reservation_path(@reservation), method: :delete,
+      data: { confirm: "¿Estás seguro de que deseas cancelar esta reserva?" },
+      style: "background-color: #b64b4b; padding: 10px 15px; color: white; border: none; border-radius: 8px;" %>
+  </div>
+</div>

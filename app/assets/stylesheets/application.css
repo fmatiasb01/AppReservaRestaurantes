@@ -1,0 +1,105 @@
+/* Estilo general para ambas vistas */
+
+.reserva-container {
+  background-color: #3b2c2a;
+  border-radius: 15px;
+  padding: 30px;
+  color: #fff;
+  width: 400px;
+  margin: 50px auto;
+  font-family: Arial, sans-serif;
+}
+
+.reserva-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #fff;
+}
+
+.reserva-container label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.reserva-container input,
+.reserva-container select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  background-color: #e0e0e0;
+}
+
+.reserva-container input[type="submit"],
+.reserva-container a.button {
+  background-color: #e0665d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.reserva-container a.button:hover,
+.reserva-container input[type="submit"]:hover {
+  background-color: #d05249;
+}
+
+.reserva-container p {
+  margin-bottom: 10px;
+}
+.mesas-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.mesas-table th,
+.mesas-table td {
+  border-bottom: 1px solid #555;
+  padding: 12px;
+  text-align: center;
+}
+
+.mesas-table th {
+  background-color: #4a3a39;
+  font-weight: bold;
+}
+
+.mesas-table tr:nth-child(even) {
+  background-color: #493b39;
+}
+
+.mesas-table tr:nth-child(odd) {
+  background-color: #3b2c2a;
+}
+
+.disponible {
+  color: #00cc66;
+  font-weight: bold;
+}
+
+.ocupada {
+  color: #ff6666;
+  font-weight: bold;
+}
+
+.liberar-button {
+  background-color: #e0665d;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.liberar-button:hover {
+  background-color: #d05249;
+}
